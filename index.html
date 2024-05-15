@@ -1,5 +1,4 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 
@@ -122,115 +121,12 @@
 
 
 	<div class="navbox">
-		<div class="navhead">MP3</div>
+		<div class="navhead">Title Here</div>
 		<div class="navfill">
 			<div class="navinfo">
 						
-				<div id="controls">
-					
-					<div style="display: flex; justify-content: center; align-items: center;">
-						<button id="previous">Previous Song</button>
-					</div>
-					
-					<div style="display: flex; justify-content: center; align-items: center;">
-						<button style="width: 46px"	 id="play">Play</button>
-						<button style="width: 56px" id="pause">Pause</button>
-						<button style="width: 46px" id="stop">Stop</button>
-					</div>
-
-				
-
-				
-
-			  </div>
-
-			  <input type="range" id="volume" min="0" max="100" value="50">
-
-			  <div style="display: flex; justify-content: center; align-items: center;" id="timer">00:00</div>
-
-			  <audio id="audioPlayer" src="" preload="auto"></audio>
-
-
-
-  <script>
-
-    var audioPlayer = document.getElementById('audioPlayer');
-    var playButton = document.getElementById('play');
-    var pauseButton = document.getElementById('pause');
-    var stopButton = document.getElementById('stop');
-    var volumeSlider = document.getElementById('volume');
-    var timerDisplay = document.getElementById('timer');
-    var previousButton = document.getElementById('previous');
-    var playlist = [
-
-      'Cameo - Word Up.mp3',
-      'zclub.mp3',
-      'znow.mp3'
-
-      // Add more songs here
-    ];
-
-
-
-				var currentSongIndex = 0;
-
-
-				function playSong() {
-				  audioPlayer.src = playlist[currentSongIndex];
-				  audioPlayer.play();
-				}
-
-
-
-				function pauseSong() {
-				  audioPlayer.pause();
-				}
-
-
-
-				function stopSong() {
-				  audioPlayer.pause();
-				  audioPlayer.currentTime = 0;
-				}
-
-
-
-				function previousSong() {
-				  currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
-				  playSong();
-				}
-	  
-	  			function nextSong() {
-				  currentSongIndex = (currentSongIndex + 1) % playlist.length;
-				  playSong();
-				}
-
-
-
-				function updateTimer() {
-				  var minutes = Math.floor(audioPlayer.currentTime / 60);
-				  var seconds = Math.floor(audioPlayer.currentTime % 60);
-				  minutes = minutes < 10 ? '0' + minutes : minutes;
-				  seconds = seconds < 10 ? '0' + seconds : seconds;
-				  timerDisplay.textContent = minutes + ':' + seconds;
-				}
-
-
-
-				function updateVolume() {
-				  audioPlayer.volume = volumeSlider.value / 100;
-				}
-
-
-
-				playButton.addEventListener('click', playSong);
-				pauseButton.addEventListener('click', pauseSong);
-				stopButton.addEventListener('click', stopSong);
-				previousButton.addEventListener('click', previousSong);
-				nextBtn.addEventListener('click', nextSong);
-				volumeSlider.addEventListener('input', updateVolume);
-				audioPlayer.addEventListener('timeupdate', updateTimer);
-			  </script>
+				<p>Veniam amet consectetur sint anim consectetur irure commodo. Ea reprehenderit laboris non enim occaecat ipsum tempor duis eiusmod. Veniam enim et magna ut 
+				reprehenderit nulla et nostrud incididunt quis enim eu.</p>
 				
 			</div>
 		</div>
