@@ -1,10 +1,378 @@
-<!DOCTYPE html>
-<html>
-<title>inquire within</title>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<head>
+
+<title>ThemeKings MILITARY HTML and CSS Gaming Website Theme - Free Template Download</title>
+<meta name="description" content="Download MILITARY at Themekings. Our FREE website theme is codied in HTML and CSS format." />
+<meta name="keywords" content="" />
+<meta content="english" name="Language"/>
+<meta content="public" http-equiv="cache-control"/>
+<meta content="index,follow" name="robots"/>
+
+<meta property="og:url"           content="http://www.themekings.net/themestk/gamers/military/index.html" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="ThemeKings MILITARY HTML and CSS Gaming Website Theme - Free Template Download" />
+<meta property="og:description"   content="Download MILITARY at Themekings. Our FREE website theme is codied in HTML and CSS format." />
+<meta property="og:image"         content="http://themekings.net/images/tk.jpg" />
+
+<meta name="viewport" content="width-device-width, initial-scale=1.0"/>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2984065-7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2984065-7');
+</script>
+
+
+<!-- CSS FILES -->
+<link rel="stylesheet" type="text/css" href="css/themecss.css" />
+
+</head>
+
 <body>
 
-<h1>This is a heading</h1>
-<p>This is a paragraph.</p>
+
+
+
+
+<div id="bodycontainer">
+
+
+
+
+
+<div id="banner">
+	<div class="bannertitle">Your Clan Name Goes Here</div>
+</div>
+
+
+
+
+
+
+
+<div id="COL-left">
+
+
+
+	<div class="navbox">
+		<div class="navhead">Nav Links</div>
+		<div class="navfill">
+		<div class="navinfo">	
+			<div class="nav-menu">
+				<ul>
+					<li><a href="#">Link #1</a></li>
+					<li><a href="#">Link #2</a></li>
+					<li><a href="#">Link #3</a></li>
+					<li><a href="#">Link #4</a></li>
+					<li><a href="#">Link #5</a></li>
+				</ul>
+			</div>
+		</div>
+		</div>
+		<div class="navfooter"></div>
+	</div>
+	
+	
+	
+	
+	<div class="navbox">
+		<div class="navhead">More Nav Links</div>
+		<div class="navfill">
+		<div class="navinfo">	
+			<div class="nav-menu">
+				<ul>
+					<li><a href="#">Link #1</a></li>
+					<li><a href="#">Link #2</a></li>
+					<li><a href="#">Link #3</a></li>
+					<li><a href="#">Link #4</a></li>
+					<li><a href="#">Link #5</a></li>
+				</ul>
+			</div>
+		</div>
+		</div>
+		<div class="navfooter"></div>
+	</div>
+
+
+	
+
+	
+
+	<div class="navbox">
+		<div class="navhead">Title Here</div>
+		<div class="navfill">	
+			<div class="navinfo">
+				
+				<p>Add stuff here. This content area is 168px wide and can be used to add scripts, news, and other small items.</p>
+				
+			</div>
+		</div>
+		<div class="navfooter"></div>
+	</div>
+
+
+
+	<div class="navbox">
+		<div class="navhead">MP3</div>
+		<div class="navfill">
+			<div class="navinfo">
+						
+				<div id="controls">
+					
+					<div style="display: flex; justify-content: center; align-items: center;">
+						<button id="previous">Previous Song</button>
+					</div>
+					
+					<div style="display: flex; justify-content: center; align-items: center;">
+						<button style="width: 46px"	 id="play">Play</button>
+						<button style="width: 56px" id="pause">Pause</button>
+						<button style="width: 46px" id="stop">Stop</button>
+					</div>
+
+				
+
+				
+
+			  </div>
+
+			  <input type="range" id="volume" min="0" max="100" value="50">
+
+			  <div style="display: flex; justify-content: center; align-items: center;" id="timer">00:00</div>
+
+			  <audio id="audioPlayer" src="" preload="auto"></audio>
+
+
+
+  <script>
+
+    var audioPlayer = document.getElementById('audioPlayer');
+    var playButton = document.getElementById('play');
+    var pauseButton = document.getElementById('pause');
+    var stopButton = document.getElementById('stop');
+    var volumeSlider = document.getElementById('volume');
+    var timerDisplay = document.getElementById('timer');
+    var previousButton = document.getElementById('previous');
+    var playlist = [
+
+      'Cameo - Word Up.mp3',
+      'zclub.mp3',
+      'znow.mp3'
+
+      // Add more songs here
+    ];
+
+
+
+				var currentSongIndex = 0;
+
+
+				function playSong() {
+				  audioPlayer.src = playlist[currentSongIndex];
+				  audioPlayer.play();
+				}
+
+
+
+				function pauseSong() {
+				  audioPlayer.pause();
+				}
+
+
+
+				function stopSong() {
+				  audioPlayer.pause();
+				  audioPlayer.currentTime = 0;
+				}
+
+
+
+				function previousSong() {
+				  currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
+				  playSong();
+				}
+	  
+	  			function nextSong() {
+				  currentSongIndex = (currentSongIndex + 1) % playlist.length;
+				  playSong();
+				}
+
+
+
+				function updateTimer() {
+				  var minutes = Math.floor(audioPlayer.currentTime / 60);
+				  var seconds = Math.floor(audioPlayer.currentTime % 60);
+				  minutes = minutes < 10 ? '0' + minutes : minutes;
+				  seconds = seconds < 10 ? '0' + seconds : seconds;
+				  timerDisplay.textContent = minutes + ':' + seconds;
+				}
+
+
+
+				function updateVolume() {
+				  audioPlayer.volume = volumeSlider.value / 100;
+				}
+
+
+
+				playButton.addEventListener('click', playSong);
+				pauseButton.addEventListener('click', pauseSong);
+				stopButton.addEventListener('click', stopSong);
+				previousButton.addEventListener('click', previousSong);
+				nextBtn.addEventListener('click', nextSong);
+				volumeSlider.addEventListener('input', updateVolume);
+				audioPlayer.addEventListener('timeupdate', updateTimer);
+			  </script>
+				
+			</div>
+		</div>
+		<div class="navfooter"></div>
+	</div>
+
+
+
+	<div class="navbox">
+		<div class="navhead">Title Here</div>
+		<div class="navfill">
+			<div class="navinfo">
+			
+				<p>Quis Lorem Lorem consectetur sunt aute labore. Dolor aliqua consequat enim ex do irure. Voluptate excepteur anim nisi nostrud id est consectetur nulla 
+				nostrud amet consectetur do cupidatat.</p>
+				
+			</div>
+		</div>
+		<div class="navfooter"></div>
+	</div>
+
+
+
+
+
+</div>
+
+
+
+<div id="COL-right">
+
+
+
+	<div class="topicmenu">
+		<div class="toptop">
+			<div class="topictitle">Military Theme - 01.30.10</div>
+		</div>
+
+			<div class="topicmid">
+				<div class="topicinfo">
+				
+					<p>It&#39;s here, ThemeKings Military theme!</p>
+										
+					<p>This theme, designed for on-line gamers, allows those wanting to maintain there own clan website using the power of a CSS template to do just that.</p>
+					
+					<p>Our theme will feature a flash shout box, XML flash MP3 player, and a optional flash banner. You will also be able to expanded your topic sections by as 
+					many as you like, as well as the navigation boxes on the left side of the page.</p>
+					
+					<p>After many years of desiring the appearances of php-nuke themes I thought it would be nice to have the ability to quickly edit my own website(s) using 
+					either Web-Expression or Dreamweaver and not php-nukes admin control panel. This theme, as do all of my themes, allows you to do just that. Why not let 
+					your visitors admire your community without having to register just to browse your site as some clans require you to do. What&#39;s the fun with that?!</p>
+					
+					<p>And obviously the price is set right. &quot;FREE&quot;, to all my visitors. Keep checking back for more information.</p>					
+
+				</div>
+				<div class="topicsignature">Todd Swift, Web Admin/Designer</div>
+			</div>
+		<div class="topicfoot"></div>
+	</div>
+
+	
+
+	
+
+	<div class="topicmenu">
+		<div class="toptop">
+			<div class="topictitle">Topic #2&nbsp; - 01.30.10</div>
+		</div>
+			<div class="topicmid">
+				<div class="topicinfo">
+				
+					<p>Need Support? Register in our forum for assistance.</p>
+					
+					<p>Dolore voluptate nisi sunt laboris amet sunt adipisicing cupidatat cillum magna adipisicing minim aliquip. Amet duis tempor laborum dolore consectetur 
+					eu adipisicing laborum consequat. Mollit sit sunt aliqua amet et proident mollit nisi in veniam.</p>
+
+					<p>Ex ut dolor amet elit sit sint.</p>
+				
+				</div>
+				<div class="topicsignature">Todd Swift, Web Admin/Designer</div>
+			</div>
+		<div class="topicfoot"></div>
+	</div>
+
+
+
+
+
+	<div class="topicmenu">
+		<div class="toptop">
+			<div class="topictitle">Topic #3&nbsp; - 01.30.10</div>
+		</div>
+			<div class="topicmid">
+				<div class="topicinfo">
+					
+					<p>Laborum ullamco elit proident ex irure qui ea deserunt id nulla minim nulla reprehenderit. Minim quis laboris nisi reprehenderit elit cupidatat aute adipisicing enim eiusmod laboris est fugiat.</p>
+
+					<p>Duis ea et amet voluptate cupidatat sint aliquip dolor sint. Fugiat reprehenderit qui est officia consequat laboris et ut labore adipisicing ipsum dolor anim deserunt.</p>
+					
+					<p>Sint sunt exercitation commodo aliqua magna Lorem occaecat sunt sint ullamco nisi culpa proident aute ullamco. Irure reprehenderit sint sunt eiusmod enim veniam adipisicing ipsum velit ea pariatur cupidatat minim consequat. Qui consectetur nulla culpa exercitation enim aliquip dolor irure. Excepteur cillum ipsum labore veniam minim eu sunt ad. Nulla voluptate est aliqua aute pariatur ullamco occaecat consectetur nulla.</p>
+					
+				</div>
+				<div class="topicsignature">Todd Swift, Web Admin/Designer</div>	
+			</div>
+		<div class="topicfoot"></div>
+	</div>
+
+
+
+	
+
+</div>
+
+
+	<div class="foot">
+		<div id="ft-wrap">
+		
+			<div id="ft-L">
+				<p class="footer-text-L"><strong>Website Name</strong></p>
+				<p class="footer-text-L">Admin: Your Name Here</p>
+				<p class="footer-text-L">Copyright: 2022</p>				
+			</div>
+			
+			<div id="ft-M">
+				<p style="font-weight:bold" class="footer-text-M">&quot;Team Slogan Here&quot;</p>
+				<p class="footer-text-M">Established: 2009</p>
+			</div>
+			
+			<div id="ft-R">
+				<ul>
+					<li style="list-style:none"><a href="#top">Scroll To Page Top</a></li>
+				</ul>
+			</div>
+			
+		</div>	
+	</div>
+	
+	
+</div>
+
+
+
 
 </body>
 </html>
